@@ -9,7 +9,7 @@ import VolunteersRegister from "./pages/volunteers-register";
 
 function App() {
   return (
-    <Router>
+    <Router >
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/volunteers/login" component={VolunteersLogin} />
