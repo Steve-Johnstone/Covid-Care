@@ -1,9 +1,11 @@
-import React from "react";
+import MapContainer from "../components/volunteer-homepage-mapView.component";
+import Header from "../components/volunteer-homepage-header.component";
 
 const VolunteersHomePage = () => {
     return (
-        <div className="container">
-            <h1>HomePage!</h1>
+        <div style={{backgroundColor: '#DACECE'}} >
+            <Header />
+            <MapContainer />
         </div>
     )
 }
