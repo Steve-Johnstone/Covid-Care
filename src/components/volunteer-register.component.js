@@ -72,7 +72,10 @@ export default class RegistrationPage extends Component {
   render() {
 
     const registrationBadgeStyle = {
-      backgroundColor: "#A78080", color: 'white', textAlign: 'center', padding: '7px'
+      backgroundColor: "#A78080", 
+      color: 'white', 
+      textAlign: 'center', 
+      padding: '7px'
     }
 
     return (
