@@ -55,7 +55,6 @@ export default class LoginPage extends Component {
   render() {
     return (
       <div>
-        <h3>Login</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Email: </label>
@@ -77,11 +76,13 @@ export default class LoginPage extends Component {
               onChange={this.onChangePassword}
             />
           </div>
-          <div className="form-group">
-            <input
+          <div>
+          <br/>
+            <input style={{backgroundColor: '#2734AD', width: '100%'}}
               type="submit"
               value="Login"
-              className="btn btn-primary mt-3"
+              className="btn"
+              id="primaryButton"
             />
           </div>
         </form>
