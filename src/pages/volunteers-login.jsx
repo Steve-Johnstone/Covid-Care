@@ -4,11 +4,14 @@ import LoginFooter from "../components/volunteer-login-footer.component";
 
 const VolunteersLogin = () => {
     return (
-        <div style={{maxWidth: '600px'}} className="container">
+        <div >
+            <div style={{maxWidth: '600px'}} className="container">
             <div className="flex">
             <h1 >Covid Care</h1>
             </div>
             <LoginPage className="flex"/> 
+            </div>
+            <br/>
             <LoginFooter />   
         </div>
     )

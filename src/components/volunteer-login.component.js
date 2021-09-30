@@ -81,7 +81,8 @@ export default class LoginPage extends Component {
             <input style={{backgroundColor: '#2734AD', width: '100%'}}
               type="submit"
               value="Login"
-              className="primaryButton"
+              className="btn"
+              id="primaryButton"
             />
           </div>
         </form>
