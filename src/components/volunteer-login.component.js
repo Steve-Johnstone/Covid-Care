@@ -5,19 +5,19 @@ export default class LoginPage extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      username: "",
+      email: "",
       password: "",
     };
   }
 
-  onChangeUsername(e) {
+  onChangeEmail(e) {
     this.setState({
-      username: e.target.value,
+      email: e.target.value,
     });
   }
 
@@ -31,13 +31,26 @@ export default class LoginPage extends Component {
     e.preventDefault();
 
     const user = {
-      username: this.state.username,
+      email: this.state.email,
       password: this.state.password,
     };
 
-    axios
-      .post("http://localhost:5000/users/post", user)
-      .then((res) => console.log(res.data));
+    console.log("user: ", user);
+
+    axios(
+      {
+        method: "post",
+        data: {
+          username: user.email,
+          password: user.password,
+        },
+        withCredentials: true,
+        url: "http://localhost:5000/volunteers/login",
+      },
+      () => {
+        this.props.history.push("/volunteers/homepage");
+      }
+    ).then((res) => console.log(res));
   }
 
   render() {

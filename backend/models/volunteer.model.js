@@ -4,14 +4,12 @@ const volunteerSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
     minLength: 5,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
   },
   postcode: {

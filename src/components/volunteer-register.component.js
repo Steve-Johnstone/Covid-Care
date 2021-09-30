@@ -61,6 +61,7 @@ export default class RegistrationPage extends Component {
       task: this.state.task,
       password: this.state.password,
     };
+
     axios
       .post("http://localhost:5000/volunteers/register", volunteer)
       .then((res) => console.log(res.data));

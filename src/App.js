@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainPage from "./pages";
 import VolunteersLogin from "./pages/volunteers-login";
 import VolunteersRegister from "./pages/volunteers-register";
+import VolunteersHomepage from "./pages/volunteers-homepage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           component={VolunteersRegister}
         />
       </Switch>
+      <Route exact path="/volunteers/homepage" component={VolunteersHomepage} />
     </Router>
   );
 }
