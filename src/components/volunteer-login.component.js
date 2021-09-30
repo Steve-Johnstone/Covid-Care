@@ -43,8 +43,13 @@ export default class LoginPage extends Component {
       },
       withCredentials: true,
       url: "http://localhost:5000/volunteers/login",
-    }).then((res) => console.log(res));
-    window.location = "/volunteers/homepage";
+    }).then((res) => {
+      if (res.data.status) {
+        window.location = "/volunteers/homepage";
+      } else {
+        console.log("Invalid user details");
+      }
+    });
   }
 
   render() {
@@ -64,7 +69,7 @@ export default class LoginPage extends Component {
           <div className="form-group">
             <label>Password: </label>
             <input
-              type="text"
+              type="password"
               required
               className="form-control"
               value={this.state.password}

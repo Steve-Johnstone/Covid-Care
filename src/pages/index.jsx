@@ -10,9 +10,10 @@ const MainPage = () => {
         >
         <div 
         className='flex'>
-            <h1>CovidCare</h1>
+            <h1 id="main-header">CovidCare</h1>
         </div>
         <div 
+        id="main-box"
         className='container'>
             <p>Despite the success of the vaccination programme in the UK, Covid is still a major issue which is affecting many people every week, who are forced to self-isolate, either due to a positive test or because they have potentially been in contact with the virus.</p>
             <p>CovidCare is a social enterprise, designed to connect those who need help, with volunteers in their local area, who are willing to assist them.</p>
@@ -21,9 +22,9 @@ const MainPage = () => {
         </div>
             <div 
         className='footer'>
-            <Link style={{backgroundColor: '#2734AD'}} className="primaryButton" to="/volunteers/login">Login</Link>
+            <Link style={{backgroundColor: '#2734AD'}} id="primaryButton" className="btn" to="/volunteers/login">Login</Link>
             <br/>
-            <Link className="primaryButton" to="/volunteers/register">Register</Link>
+            <Link id="primaryButton" className="btn"  to="/volunteers/register">Register</Link>
             </div>
             </div>
     )

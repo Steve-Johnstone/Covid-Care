@@ -70,9 +70,17 @@ export default class RegistrationPage extends Component {
   }
 
   render() {
+
+    const registrationBadgeStyle = {
+      backgroundColor: "#A78080", 
+      color: 'white', 
+      textAlign: 'center', 
+      padding: '7px'
+    }
+
     return (
       <div>
-        <h3>Register as Volunteer</h3>
+        <h5 style={registrationBadgeStyle}>Register as Volunteer</h5>
         <form onSubmit={this.onSubmit}>
           <div className="form-group mt-2">
             <label>Full name</label>
@@ -118,7 +126,7 @@ export default class RegistrationPage extends Component {
           <div className="form-group mt-2">
             <label>Password</label>
             <input
-              type="text"
+              type="password"
               required
               className="form-control"
               value={this.state.password}
@@ -126,11 +134,11 @@ export default class RegistrationPage extends Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="footer">
             <input
               type="submit"
               value="Register"
-              className="btn btn-primary mt-3"
+              className="primaryButton"
             />
           </div>
         </form>

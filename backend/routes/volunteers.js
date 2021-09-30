@@ -36,13 +36,12 @@ router.route("/register").post(async (req, res) => {
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
-    if (!user) res.send("No user found");
+    if (!user) res.json({ status: false });
     else {
       req.logIn(user, (err) => {
-        console.log("User found inside router");
         if (err) throw err;
-        res.send("Logged in!");
-        console.log(user);
+        res.json({ status: true });
+        console.log(res.json);
       });
     }
   })(req, res, next);
