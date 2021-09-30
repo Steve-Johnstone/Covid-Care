@@ -35,12 +35,9 @@ code {
   padding-top: 30px;
 }
 
-.primaryButton {
+#primaryButton {
   width: 150px;
-  height: 30px;
   color: white;
   background-color: #41a76c;
   border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
 }

@@ -21,9 +21,9 @@ const MainPage = () => {
         </div>
             <div 
         className='footer'>
-            <Link style={{backgroundColor: '#2734AD'}} className="primaryButton" to="/volunteers/login">Login</Link>
+            <Link style={{backgroundColor: '#2734AD'}} id="primaryButton" className="btn" to="/volunteers/login">Login</Link>
             <br/>
-            <Link className="primaryButton" to="/volunteers/register">Register</Link>
+            <Link id="primaryButton" className="btn"  to="/volunteers/register">Register</Link>
             </div>
             </div>
     )
