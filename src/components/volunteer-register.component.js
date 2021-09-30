@@ -18,6 +18,7 @@ export default class RegistrationPage extends Component {
       potscode: "",
       task: "",
       password: "",
+      error: "",
     };
   }
 
@@ -64,19 +65,26 @@ export default class RegistrationPage extends Component {
 
     axios
       .post("http://localhost:5000/volunteers/register", volunteer)
-      .then((res) => console.log(res.data));
-
-    window.location = "/volunteers/login";
+      .then((res) => {
+        if (res.data.status) {
+          window.location = "/volunteers/login";
+        } else {
+          this.setState({
+            error: "Account already exists with this email address",
+          });
+          console.log(this.state.error);
+        }
+      });
   }
 
   render() {
-
     const registrationBadgeStyle = {
-      backgroundColor: "#A78080", 
-      color: 'white', 
-      textAlign: 'center', 
-      padding: '7px'
-    }
+      backgroundColor: "#A78080",
+      color: "white",
+      textAlign: "center",
+      padding: "7px",
+      marginBottom: 15,
+    };
 
     return (
       <div>
@@ -138,10 +146,14 @@ export default class RegistrationPage extends Component {
             <input
               type="submit"
               value="Register"
-              className="primaryButton"
+              id="primaryButton"
+              className="btn"
             />
           </div>
         </form>
+        {this.state.error && (
+          <div className="error-message">{this.state.error}</div>
+        )}
       </div>
     );
   }

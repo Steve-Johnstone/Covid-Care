@@ -7,7 +7,7 @@ const VolunteersLogin = () => {
         backgroundSize: "cover",
         height: "100vh",
     }}>
-        <h1 className="flex">Covid Care</h1>
+        <h1 id="main-header" className="flex">Covid Care</h1>
         <div className='flex'>
             <RegistrationPage />
             </div>

@@ -11,7 +11,7 @@ router.route("/register").post(async (req, res) => {
     let volunteer = await Volunteer.findOne({ email: req.body.email });
 
     if (volunteer)
-      return res.send("Account already registered with this email address");
+      return res.json("Account already registered with this email address");
 
     volunteer = new Volunteer({
       name: req.body.name,
@@ -26,9 +26,10 @@ router.route("/register").post(async (req, res) => {
 
     await volunteer.save();
 
-    res.json("Volunteer added!");
+    res.json({ status: true });
   } catch (err) {
-    console.log(err);
+    res.json(err.message);
+    console.log(err.message);
   }
 });
 

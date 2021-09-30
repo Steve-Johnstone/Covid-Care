@@ -12,6 +12,7 @@ export default class LoginPage extends Component {
     this.state = {
       email: "",
       password: "",
+      error: "",
     };
   }
 
@@ -47,7 +48,9 @@ export default class LoginPage extends Component {
       if (res.data.status) {
         window.location = "/volunteers/homepage";
       } else {
-        console.log("Invalid user details");
+        this.setState({
+          error: "Invalid login details",
+        });
       }
     });
   }
@@ -84,6 +87,9 @@ export default class LoginPage extends Component {
               className="btn btn-primary mt-3"
             />
           </div>
+          {this.state.error && (
+            <div className="error-message">{this.state.error}</div>
+          )}
         </form>
       </div>
     );
