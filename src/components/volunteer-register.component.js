@@ -118,7 +118,7 @@ export default class RegistrationPage extends Component {
           <div className="form-group mt-2">
             <label>Password</label>
             <input
-              type="text"
+              type="password"
               required
               className="form-control"
               value={this.state.password}

@@ -41,3 +41,13 @@ code {
   background-color: #41a76c;
   border-radius: 10px;
 }
+
+#main-box {
+  width: 50%;
+}
+
+#main-header {
+  font-size: 70px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
