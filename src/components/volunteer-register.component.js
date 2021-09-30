@@ -121,7 +121,7 @@ export default class RegistrationPage extends Component {
             />
           </div>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Task</label>
+            <label for="exampleFormControlSelect1">I need help with...</label>
             {/* <input
               type="text"
               required
@@ -132,7 +132,7 @@ export default class RegistrationPage extends Component {
             <select               
               type="text"
               required
-              class="form-control" 
+              class="form-select" 
               id="exampleFormControlSelect1"
               value={this.state.task}
               onChange={this.onChangeTask}>
