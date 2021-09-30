@@ -120,15 +120,27 @@ export default class RegistrationPage extends Component {
               onChange={this.onChangePostcode}
             />
           </div>
-          <div className="form-group mt-2">
-            <label>Task</label>
-            <input
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Task</label>
+            {/* <input
               type="text"
               required
               className="form-control"
               value={this.state.task}
               onChange={this.onChangeTask}
-            />
+            /> */}
+            <select               
+              type="text"
+              required
+              class="form-control" 
+              id="exampleFormControlSelect1"
+              value={this.state.task}
+              onChange={this.onChangeTask}>
+                <option>Food shopping</option>
+                <option>Dog walking</option>
+                <option>Going to a pharmacy</option> 
+                <option>Delivery</option>      
+            </select>
           </div>
 
           <div className="form-group mt-2">

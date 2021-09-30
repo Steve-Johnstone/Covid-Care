@@ -22,9 +22,9 @@ const MainPage = () => {
         </div>
             <div 
         className='footer'>
-            <Link style={{backgroundColor: '#2734AD'}} id="primaryButton" className="btn" to="/volunteers/login">Login</Link>
-            <br/>
-            <Link id="primaryButton" className="btn"  to="/volunteers/register">Register</Link>
+            <Link style={{backgroundColor: '#2734AD', marginRight: '20px'}} id="primaryButton" className="btn" to="/volunteers/login">Login</Link>
+            <Link style={{marginRight: '20px'}} id="primaryButton" className="btn">Request help</Link>
+            <Link id="primaryButton" className="btn"  to="/volunteers/register">Register as volunteer</Link>
             </div>
             </div>
     )
