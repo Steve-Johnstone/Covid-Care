@@ -10,7 +10,7 @@ import VolunteersHomepage from "./pages/volunteers-homepage";
 
 function App() {
   return (
-    <Router>
+    <Router >
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/volunteers/login" component={VolunteersLogin} />

@@ -65,6 +65,8 @@ export default class RegistrationPage extends Component {
     axios
       .post("http://localhost:5000/volunteers/register", volunteer)
       .then((res) => console.log(res.data));
+
+    window.location = "/volunteers/login";
   }
 
   render() {

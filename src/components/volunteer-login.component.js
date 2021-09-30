@@ -35,22 +35,16 @@ export default class LoginPage extends Component {
       password: this.state.password,
     };
 
-    console.log("user: ", user);
-
-    axios(
-      {
-        method: "post",
-        data: {
-          username: user.email,
-          password: user.password,
-        },
-        withCredentials: true,
-        url: "http://localhost:5000/volunteers/login",
+    axios({
+      method: "post",
+      data: {
+        username: user.email,
+        password: user.password,
       },
-      () => {
-        this.props.history.push("/volunteers/homepage");
-      }
-    ).then((res) => console.log(res));
+      withCredentials: true,
+      url: "http://localhost:5000/volunteers/login",
+    }).then((res) => console.log(res));
+    window.location = "/volunteers/homepage";
   }
 
   render() {
