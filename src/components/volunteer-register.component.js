@@ -66,14 +66,13 @@ export default class RegistrationPage extends Component {
     axios
       .post("http://localhost:5000/volunteers/register", volunteer)
       .then((res) => {
+        if (res.data.error) {
+          this.setState({
+            error: res.data.error,
+          });
+        }
         if (res.data.status) {
           window.location = "/volunteers/login";
-        } else {
-          console.log(res.json);
-          this.setState({
-            error: "Account already exists with this email address",
-          });
-          console.log(this.state.error);
         }
       });
   }
@@ -121,8 +120,10 @@ export default class RegistrationPage extends Component {
               onChange={this.onChangePostcode}
             />
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">I need help with...</label>
+          <div className="form-group">
+            <label htmlFor="exampleFormControlSelect1">
+              I need help with...
+            </label>
             {/* <input
               type="text"
               required
@@ -133,7 +134,7 @@ export default class RegistrationPage extends Component {
             <select
               type="text"
               required
-              class="form-select"
+              className="form-select"
               id="exampleFormControlSelect1"
               value={this.state.task}
               onChange={this.onChangeTask}

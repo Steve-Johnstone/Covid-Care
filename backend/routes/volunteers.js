@@ -2,15 +2,21 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const router = require("express").Router();
 const Volunteer = require("../models/volunteer.model");
+const validate = require("../helpers/validation");
 
 //Register
 
 router.route("/register").post(async (req, res) => {
   try {
+    const { error } = validate(req.body);
+    if (error) return res.json({ error: error.details[0].message });
+
     let volunteer = await Volunteer.findOne({ email: req.body.email });
 
     if (volunteer)
-      return res.json("Account already registered with this email address");
+      return res.json({
+        error: "Account already registered with this email address",
+      });
 
     volunteer = new Volunteer({
       name: req.body.name,
@@ -27,8 +33,7 @@ router.route("/register").post(async (req, res) => {
 
     res.json({ status: true });
   } catch (err) {
-    res.json(err.message);
-    console.log(err.message);
+    res.json({ error: err.message });
   }
 });
 
