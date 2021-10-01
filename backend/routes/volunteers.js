@@ -40,11 +40,17 @@ router.route("/register").post(async (req, res) => {
 //Login
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
-    if (err) throw err;
-    if (!user) res.json({ status: false });
-    else {
+    if (err) return res.json({ error: err, status: false });
+    if (!user) {
+      return res.json({
+        error: "Invalid login details",
+        status: false,
+      });
+    } else {
       req.logIn(user, (err) => {
-        if (err) throw err;
+        if (err) {
+          return res.json({ error: err, status: false });
+        }
         res.json({ status: true });
       });
     }

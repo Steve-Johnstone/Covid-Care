@@ -6,7 +6,7 @@ function validateVolunteer(volunteer) {
     email: Joi.string().min(5).max(50).required().email(),
     postcode: Joi.string().required(),
     task: Joi.string().required(),
-    password: Joi.string().min(5).max(50).required(),
+    password: Joi.string().min(8).max(50).required(),
   };
   return Joi.validate(volunteer, schema);
 }

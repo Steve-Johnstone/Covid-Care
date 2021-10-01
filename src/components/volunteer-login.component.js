@@ -13,7 +13,6 @@ export default class LoginPage extends Component {
       email: "",
       password: "",
       error: "",
-      loggedIn: false,
     };
   }
 
@@ -46,17 +45,14 @@ export default class LoginPage extends Component {
       withCredentials: true,
       url: "http://localhost:5000/volunteers/login",
     }).then((res) => {
-      this.setState({
-        loggedIn: res.data.status,
-      });
-      console.log(this.state.loggedIn);
-
-      if (this.state.loggedIn) {
-        window.location = "/volunteers/homepage";
-      } else {
+      if (res.data.error) {
         this.setState({
-          error: "Invalid login details",
+          error: res.data.error,
         });
+      } else {
+        if (res.data.status) {
+          window.location = "/volunteers/homepage";
+        }
       }
     });
   }
@@ -95,6 +91,7 @@ export default class LoginPage extends Component {
               id="primaryButton"
             />
           </div>
+          <div className="password-link">Forgotten Password?</div>
           {this.state.error && (
             <div className="error-message">{this.state.error}</div>
           )}

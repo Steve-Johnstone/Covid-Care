@@ -69,10 +69,24 @@ code {
 
 #main-header {
   font-size: 60px;
+  margin-top: 15px;
 }
 
 .error-message {
   margin-top: 30px;
   color: #cc0000;
   text-align: center;
+}
+
+.password-link {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: none;
+  font-size: 15px;
+}
+
+#small-header {
+  text-decoration: underline;
+  font-weight: bold;
 }

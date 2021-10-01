@@ -15,10 +15,23 @@ const MainPage = () => {
         <div 
         id="main-box"
         className='container'>
-            <p>Despite the success of the vaccination programme in the UK, Covid is still a major issue which is affecting many people every week, who are forced to self-isolate, either due to a positive test or because they have potentially been in contact with the virus.</p>
-            <p>CovidCare is a social enterprise, designed to connect those who need help, with volunteers in their local area, who are willing to assist them.</p>
-            <p>If you are self-isolating and need help with day-to-day chores, such as grocery shopping, picking up prescriptions or walking your dog, please register for help below.</p>
-            <p>If you are willing to offer your services to help people in your local area, please register as a volunteer below.</p>
+            <p>Despite the success of the vaccination programme in the UK, Covid is still a major issue which is affecting many people every week, 
+            who are forced to self-isolate, either due to a positive test or because they have potentially been in contact with the virus. CovidCare 
+            is a social enterprise, designed to connect those who need help, with volunteers in their local area, who are willing to assist them.</p>
+
+            <h3 id="small-header">Need Help?</h3>
+            <p>If you are self-isolating and need help with day-to-day chores, our volunteers can offer services such as:</p>
+                <ul> 
+                    <li>Shopping</li>
+                    <li>Walking dogs</li>
+                    <li>Picking up pescriptions</li>
+                </ul>
+             
+            <p>If you require assistance, please register for help by clicking on the button below and filling out a simple registration form.</p>
+
+            <h3 id="small-header">Volunteers</h3>
+            <p> Volunteering to help those in need is an extremely rewarding way to give back to your community.  We always need more volunteers, so 
+                if you are willing to help, please register below.</p>
         </div>
             <div 
         className='footer'>
