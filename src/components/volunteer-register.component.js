@@ -69,6 +69,7 @@ export default class RegistrationPage extends Component {
         if (res.data.status) {
           window.location = "/volunteers/login";
         } else {
+          console.log(res.json);
           this.setState({
             error: "Account already exists with this email address",
           });
@@ -129,17 +130,18 @@ export default class RegistrationPage extends Component {
               value={this.state.task}
               onChange={this.onChangeTask}
             /> */}
-            <select               
+            <select
               type="text"
               required
-              class="form-select" 
+              class="form-select"
               id="exampleFormControlSelect1"
               value={this.state.task}
-              onChange={this.onChangeTask}>
-                <option>Food shopping</option>
-                <option>Dog walking</option>
-                <option>Going to a pharmacy</option> 
-                <option>Delivery</option>      
+              onChange={this.onChangeTask}
+            >
+              <option>Food shopping</option>
+              <option>Dog walking</option>
+              <option>Going to a pharmacy</option>
+              <option>Delivery</option>
             </select>
           </div>
 

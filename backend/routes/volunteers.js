@@ -1,5 +1,4 @@
 const bcrypt = require("bcrypt");
-const { SSL_OP_EPHEMERAL_RSA } = require("constants");
 const passport = require("passport");
 const router = require("express").Router();
 const Volunteer = require("../models/volunteer.model");
@@ -42,7 +41,6 @@ router.post("/login", (req, res, next) => {
       req.logIn(user, (err) => {
         if (err) throw err;
         res.json({ status: true });
-        console.log(res.json);
       });
     }
   })(req, res, next);

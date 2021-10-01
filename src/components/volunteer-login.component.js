@@ -13,6 +13,7 @@ export default class LoginPage extends Component {
       email: "",
       password: "",
       error: "",
+      loggedIn: false,
     };
   }
 
@@ -45,7 +46,12 @@ export default class LoginPage extends Component {
       withCredentials: true,
       url: "http://localhost:5000/volunteers/login",
     }).then((res) => {
-      if (res.data.status) {
+      this.setState({
+        loggedIn: res.data.status,
+      });
+      console.log(this.state.loggedIn);
+
+      if (this.state.loggedIn) {
         window.location = "/volunteers/homepage";
       } else {
         this.setState({
@@ -80,8 +86,9 @@ export default class LoginPage extends Component {
             />
           </div>
           <div>
-          <br/>
-            <input style={{backgroundColor: '#2734AD', width: '100%'}}
+            <br />
+            <input
+              style={{ backgroundColor: "#2734AD", width: "100%" }}
               type="submit"
               value="Login"
               className="btn"

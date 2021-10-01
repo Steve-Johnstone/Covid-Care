@@ -7,7 +7,7 @@ const VolunteersLogin = () => {
         <div >
             <div style={{maxWidth: '600px'}} className="container">
             <div className="flex">
-            <h1 >Covid Care</h1>
+            <h1 id="main-header">Covid Care</h1>
             </div>
             <LoginPage className="flex"/> 
             </div>
