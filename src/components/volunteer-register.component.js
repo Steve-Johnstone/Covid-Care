@@ -16,9 +16,10 @@ export default class RegistrationPage extends Component {
       name: "",
       email: "",
       potscode: "",
-      task: "",
+      task: "Food shopping",
       password: "",
       error: "",
+      message: "",
     };
   }
 
@@ -72,7 +73,11 @@ export default class RegistrationPage extends Component {
           });
         }
         if (res.data.status) {
-          window.location = "/volunteers/login";
+          this.setState({
+            message:
+              "Registration complete!  You will shortly be redirected to the login page",
+          });
+          setTimeout(() => (window.location = "/volunteers/login"), 3000);
         }
       });
   }
@@ -120,17 +125,10 @@ export default class RegistrationPage extends Component {
               onChange={this.onChangePostcode}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group mt-2">
             <label htmlFor="exampleFormControlSelect1">
-              I need help with...
+              I can help with...
             </label>
-            {/* <input
-              type="text"
-              required
-              className="form-control"
-              value={this.state.task}
-              onChange={this.onChangeTask}
-            /> */}
             <select
               type="text"
               required
@@ -168,6 +166,9 @@ export default class RegistrationPage extends Component {
         </form>
         {this.state.error && (
           <div className="error-message">{this.state.error}</div>
+        )}
+        {this.state.message && (
+          <div className="success-message">{this.state.message}</div>
         )}
       </div>
     );
